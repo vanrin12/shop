@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+    <changeSet author="bob" id="1">
+        <addColumn
+                   schemaName="shophocvien"
+                   tableName="product">
+            <column name="price" type="float"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="bob" id="2">
+        <insert tableName="product" schemaName="shophocvien">
+            <column name="id" value="3"></column>
+            <column name="name" value="quanlung"></column>
+            <column name="description" value="ao quan xau nhat ho chi minh"></column>
+            <column name="image" value="C:/Users/PC-PC/Pictures/Saved Pictures/rin.png"></column>
+            <column name="price" value="12.1"></column>
+        </insert>
+
+
+    </changeSet>
+    <changeSet author="bob" id="3">
+        <insert tableName="product" schemaName="shophocvien">
+            <column name="id" value="4"></column>
+            <column name="name" value="quanlung"></column>
+            <column name="description" value="ao quan xau nhat ho chi minh"></column>
+            <column name="image" value="C:/Users/PC-PC/Pictures/Saved Pictures/rin.png"></column>
+            <column name="price" value="12.1"></column>
+        </insert>
+
+
+    </changeSet>
+    <changeSet author="bob" id="4">
+        <insert tableName="product" schemaName="shophocvien">
+            <column name="id" value="5"></column>
+            <column name="name" value="quanlung"></column>
+            <column name="description" value="ao quan xau nhat ho chi minh"></column>
+            <column name="image" value="C:/Users/PC-PC/Pictures/Saved Pictures/rin.png"></column>
+            <column name="price" value="12.1"></column>
+        </insert>
+        <insert tableName="product" schemaName="shophocvien">
+            <column name="id" value="6"></column>
+            <column name="name" value="quanlung"></column>
+            <column name="description" value="ao quan xau nhat ho chi minh"></column>
+            <column name="image" value="C:/Users/PC-PC/Pictures/Saved Pictures/rin.png"></column>
+            <column name="price" value="12.1"></column>
+        </insert>
+        <insert tableName="product" schemaName="shophocvien">
+            <column name="id" value="7"></column>
+            <column name="name" value="quanlung"></column>
+            <column name="description" value="ao quan xau nhat ho chi minh"></column>
+            <column name="image" value="C:/Users/PC-PC/Pictures/Saved Pictures/rin.png"></column>
+            <column name="price" value="12.1"></column>
+        </insert>
+
+
+    </changeSet>
+    <changeSet author="bob" id="11">
+        <tagDatabase tag="version_1.1"/>
+    </changeSet>
+
+
+</databaseChangeLog>

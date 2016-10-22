@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+    <changeSet id="1" author="bob">
+    <createTable tableName="shop">
+        <column name="id" type="int">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="name" type="varchar(50)">
+            <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+</changeSet>
+    <changeSet author="bob" id="2">
+        <insert tableName="shop" schemaName="shophocvien">
+            <column name="id" value="1"/>
+            <column name="name" value="ao quan"/>
+        </insert>
+    </changeSet>
+    <changeSet id="3" author="bob">
+        <createTable tableName="product">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image" type="blob">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet author="bob" id="5">
+        <addAutoIncrement
+                          columnDataType="int"
+                          columnName="id"
+                          tableName="shop"/>
+    </changeSet>
+    <changeSet author="bob" id="6">
+        <insert tableName="product" schemaName="shophocvien">
+            <column name="id" value="1"></column>
+            <column name="name" value="aosomi"></column>
+            <column name="description" value="ao quan xau nhat da nang"></column>
+            <column name="image" value="C:/Users/PC-PC/Pictures/Saved Pictures/rin.png"></column>
+        </insert>
+
+    </changeSet>
+    <changeSet author="bob" id="9">
+            <addColumn
+                       tableName="product">
+                <column name="idshop" type="int"/>
+            </addColumn>
+        <addForeignKeyConstraint constraintName="FK_pro_shop"
+                                 baseColumnNames="idshop"
+                                 baseTableName="product"
+                                 referencedTableName="shop"
+                                 referencedColumnNames="id" />
+        </changeSet>
+    <changeSet author="bob" id="11">
+        <tagDatabase tag="version_1.0"/>
+    </changeSet>
+    <changeSet author="bob" id="12">
+        <insert tableName="shop" schemaName="shophocvien">
+
+            <column name="name" value="phan chu trinh"/>
+        </insert>
+    </changeSet>
+
+
+
+
+
+</databaseChangeLog>
